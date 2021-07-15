@@ -1,14 +1,14 @@
 {
   "name": "node-alarmdecoder",
-  "version": "1.3.0",
-  "description": "Node.JS client for listening and parsing AlarmDecoder events over ser2sock",
+  "version": "1.0.0",
+  "description": "Node.JS client for listening and parsing AlarmDecoder events over ser2sock with rfx support based on Alan Ibrus work",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/alanibrus/node-alarmdecoder.git"
+    "url": "git+ssh://git@github.com/SantiagoSotoC/node-alarmdecoder.git"
   },
   "keywords": [
     "alarmdecoder",
@@ -18,12 +18,13 @@
     "home",
     "surveillance"
   ],
-  "author": "Alan Ibrus",
+  "author": "Santiago Soto",
   "license": "ISC",
+  "contributor":["Alan Ibrus"],
   "bugs": {
-    "url": "https://github.com/alanibrus/node-alarmdecoder/issues"
+    "url": "https://github.com/SantiagoSotoC/node-alarmdecoder/issues"
   },
-  "homepage": "https://github.com/alanibrus/node-alarmdecoder#readme",
+  "homepage": "https://github.com/SantiagoSotoC/node-alarmdecoder#readme",
   "dependencies": {
     "hex-to-binary": "^1.0.1"
   }

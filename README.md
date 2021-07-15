@@ -1,5 +1,5 @@
 # node-alarmdecoder
-Node.JS client for listening and parsing AlarmDecoder events over ser2sock. Dependency-free.
+Node.JS client for listening and parsing AlarmDecoder events over ser2sock with rfx support based on Alan Ibrus work.
 
 Easily control and monitor DSC and Ademco / Honeywell Vista alarm systems with a PC, HA system, PLC or embedded device.
 
