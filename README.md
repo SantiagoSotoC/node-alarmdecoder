@@ -1,4 +1,4 @@
-# node-alarmdecoder
+# node-alarmdecoder-rfx
 Node.JS client for listening and parsing AlarmDecoder events over ser2sock with rfx support based on Alan Ibrus work.
 
 Easily control and monitor DSC and Ademco / Honeywell Vista alarm systems with a PC, HA system, PLC or embedded device.
@@ -11,7 +11,7 @@ https://www.alarmdecoder.com/catalog/index.php
 Installation
 ------------
 ```bash
-npm install node-alarmdecoder
+npm install node-alarmdecoder-rfx
 ```
 
 Usage
