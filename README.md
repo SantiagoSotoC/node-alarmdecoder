@@ -26,12 +26,12 @@ and will help you to debug which expander and channel is used when you activate 
 
 ## Events
 
-AlarmDecoder emits 4 events:
+AlarmDecoder emits 5 events:
 * 'connected' - Successfully connected to AlarmDecoder ser2sock interface
 * 'disconnected' - You shall know
 * 'zoneChanged' - Zone status has been changed (movement, door open/close, fire on/off)
 * 'keypadMessage' - Keypad message events / panel status
-
+* 'rfxMessage' - Rf message recived 
 ### zoneChanged(data)
 ```javascript
 data = {
