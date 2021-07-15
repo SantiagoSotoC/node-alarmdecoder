@@ -32,6 +32,7 @@ AlarmDecoder emits 5 events:
 * 'zoneChanged' - Zone status has been changed (movement, door open/close, fire on/off)
 * 'keypadMessage' - Keypad message events / panel status
 * 'rfxMessage' - Rf message recived 
+
 ### zoneChanged(data)
 ```javascript
 data = {
