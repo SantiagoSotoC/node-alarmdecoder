@@ -118,6 +118,7 @@ const myAlarm = new alarmDecoder(config.ip, config.port, config.zones);
 
 myAlarm.events.on('connected', () => console.log('Connected'));
 myAlarm.events.on('disconnected', () => console.log('Disconnected'));
+myAlarm.events.on("rfxMessage",(data)=> console.log(data));
 myAlarm.events.on('zoneChanged', (data) => {
   if (data.zone.type === 'motion') {
     console.log('Movement' + (data.state ? '' : ' ended') + ' at ' + data.zone.name);
