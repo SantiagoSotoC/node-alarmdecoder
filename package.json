@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/alanibrus/node-alarmdecoder/issues"
   },
-  "homepage": "https://github.com/alanibrus/node-alarmdecoder#readme"
+  "homepage": "https://github.com/alanibrus/node-alarmdecoder#readme",
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
+  }
 }

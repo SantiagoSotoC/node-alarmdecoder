@@ -6,6 +6,7 @@
 'use strict';
 const net = require('net');
 const EventEmitter = require('events');
+const hexToBinary = require('hex-to-binary');
 
 class AlarmDecoder {
   constructor(ip, port, zoneConfig) {
@@ -106,12 +107,17 @@ class AlarmDecoder {
       const channel = zone[1]; // 01-08
       const status = zone[2]; // 00 = restored; 01 = faulted
       this.zoneChanged(expander, channel, status);
-    } else {
+    } else if(buffer.substr(0,4)==="!RFX"){
+      const rfData = buffer.substr(5, buffer.length-1).split(",");
+      const id = rfData[0];
+      const status= hexToBinary(rfData[1].trim());
+      this.rfxMessage(id, status)
+    } 
+    else{
       // buffer = [10000001000000000D--],000,[000200000000000000000000],"System Is       Ready To Arm    "
       if (buffer.indexOf('[') === 0 && buffer.indexOf(',') > -1) {
         const splitted = buffer.split(',');
         if (splitted.length <= 2) return; // FIXME: do something with unknown message
-
         // splitted[0] = bit field
         // splitted[1] = numeric code
         // splitted[2] = raw data
@@ -137,7 +143,17 @@ class AlarmDecoder {
       console.log('DEBUG: Zone changed: ' + JSON.stringify({ expander, channel, status }));
     }
   }
-
+  rfxMessage(id, state){
+    this.events.emit('rfxMessage',{
+      id: id,
+      RfLoop1: state[0],
+      RfLoop4: state[1],
+      RfLoop2: state[2],
+      RfLoop3: state[3],
+      supervised: state[5],
+      lowBattery: state[6]
+    })
+  }
   updateStatusBits(bitField) {
     for (let i in this.bits) {
       if (i === '6' || i === '7') {
